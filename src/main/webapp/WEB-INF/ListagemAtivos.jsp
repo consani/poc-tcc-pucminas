@@ -59,7 +59,9 @@
 						<th class="text-center col-md-1">Data de Fabricacao</th>
 						<th class="text-center col-md-1">Valor Unitario</th>
 						<th class="text-center col-md-1">Validade (meses)</th>
+						<sec:authorize access="hasRole('ADMIN')">
 						<th class="col-md-1"></th>
+						</sec:authorize>
 					</tr>
 				</thead>
 				<tbody>
@@ -75,11 +77,13 @@
 									value="${ativo.valorUnitario}" type="currency" /></td>
 							<td class="text-right"><fmt:formatNumber
 									value="${ativo.prazoValidade}" type="number" /></td>
+							<sec:authorize access="hasRole('ADMIN')">
 							<td class="text-center"><a class="btn btn-link btn-xs"
 								data-toggle="modal" data-target="#confirmaRemocaoModal"
 								data-whatever="${ativo.codigo}"> <span
 									class="glyphicon glyphicon-remove"></span>
 							</a></td>
+							</sec:authorize>
 						</tr>
 					</c:forEach>
 					<c:if test="${ativos.isEmpty()}">
