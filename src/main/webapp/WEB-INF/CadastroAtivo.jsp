@@ -86,7 +86,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="prazoValidade" class="col-sm-2 control-label">Prazo de Validade:</label>
+					<label for="prazoValidade" class="col-sm-2 control-label">Validade (meses):</label>
 					<div class="col-sm-2">
 						<input type="number" class="form-control" id="prazoValidade" name="prazoValidade" />
 					</div>
