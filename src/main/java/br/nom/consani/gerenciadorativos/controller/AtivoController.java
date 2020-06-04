@@ -59,7 +59,7 @@ public class AtivoController {
 		if(descricao == null || descricao.isBlank()) {
 			listaAtivos = ativos.findAll();
 		}else {
-			listaAtivos = ativos.findByDescricaoContaining(descricao);
+			listaAtivos = ativos.findByDescricaoContainingIgnoreCase(descricao);
 		}
 		
 		

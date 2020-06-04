@@ -9,5 +9,5 @@ import br.nom.consani.gerenciadorativos.model.Ativo;
 public interface Ativos extends JpaRepository<Ativo,Long>{
 	
 	//comentario
-	public List<Ativo> findByDescricaoContaining(String descricao);
+	public List<Ativo> findByDescricaoContainingIgnoreCase(String descricao);
 }
