@@ -9,7 +9,7 @@ import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.FixedLocaleResolver;
 
 @SpringBootApplication
-public class GerenciadorAtivosApplication{ //extends SpringBootServletInitializer{
+public class GerenciadorAtivosApplication{
 
 	public static void main(String[] args) {
 		SpringApplication.run(GerenciadorAtivosApplication.class, args);
