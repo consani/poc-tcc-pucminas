@@ -21,7 +21,6 @@ import br.nom.consani.gerenciadorativos.model.Categoria;
 import br.nom.consani.gerenciadorativos.repositorio.Ativos;
 
 @Controller
-//@RequestMapping("/ativos")
 public class AtivoController {
 	
 	@Autowired

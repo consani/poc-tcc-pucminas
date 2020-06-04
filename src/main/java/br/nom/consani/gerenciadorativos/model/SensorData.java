@@ -10,29 +10,39 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
+@Table(name="sensor_data")
 public class SensorData {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@JsonProperty("id_barragem")
 	private String barragem;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name="data_fabricacao")
+	@Column(name="data_coleta")
+	@JsonProperty("data_hora_envio")
 	private Date dataColeta;
 	
 	@Enumerated(EnumType.STRING)
+	@JsonProperty("tipo_metrica")
 	private TipoMetrica tipoMetrica;
 	
 	@Column(name="valor_metrica")
+	@JsonProperty("valor_metrica")
 	private BigDecimal valorMetrica;
 
 	private BigDecimal latitude;
+	
+	private BigDecimal longitude;
 	
 	public SensorData() {}
 	
@@ -75,8 +85,6 @@ public class SensorData {
 	public BigDecimal getLongitude() {
 		return longitude;
 	}
-
-	private BigDecimal longitude;
 
 	@Override
 	public int hashCode() {

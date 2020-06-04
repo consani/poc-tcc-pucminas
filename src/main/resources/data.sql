@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS ATIVO;
+DROP TABLE IF EXISTS SENSOR_DATA;
  
 CREATE TABLE ativo (
   codigo INT AUTO_INCREMENT  PRIMARY KEY,
@@ -10,6 +11,18 @@ CREATE TABLE ativo (
   prazo_validade INTEGER  
   
 );
+
+CREATE TABLE sensor_data (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  barragem VARCHAR(256) ,
+  tipo_metrica VARCHAR(128) ,
+  valor_metrica DECIMAL(10,2),
+  data_coleta DATE,
+  latitude DECIMAL(10,2),
+  longitude DECIMAL(10,2)  
+  
+);
+
  
 INSERT INTO ativo (descricao, categoria, fornecedor, data_fabricacao, valor_unitario, prazo_validade ) VALUES
   ('Trator Modelo A', 'VEICULO', 'Empresa Fornecedora Beltrano', '2019-04-21', 195500, 60),
